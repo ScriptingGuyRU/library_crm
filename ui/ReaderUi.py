@@ -62,7 +62,8 @@ def show_reader_window(widget):
 
     # Добавляем кнопку для закрытия окна
     button1 = QPushButton('Закрыть')
-    button1.clicked.connect(reader_window.close)
+    from ui.MainUi import show_welcome_window
+    button1.clicked.connect(lambda: show_welcome_window(reader_window))
     layout.addWidget(button1)
 
     widget.hide()
