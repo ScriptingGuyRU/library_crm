@@ -20,8 +20,7 @@ def show_books_window(widget):
 
     book_dialog.setFixedSize(QSize(900, 900))
 
-    from ui.MainUi import login
-    label = QLabel('Список книг для пользователя: {}'.format(login))
+    label = QLabel('Список доступных книг')
     layout.addWidget(label)
 
     # Получаем список книг из базы данных
@@ -99,13 +98,6 @@ def show_issuance_book_window(book):
         user_list_widget.setItemWidget(item, user_widget)
 
     layout.addWidget(user_list_widget)
-
-    # Добавляем поле для выбора даты
-    date_edit = QDateEdit()
-    layout.addWidget(date_edit)
-    date_edit.setDate(QDate.currentDate())
-    # Устанавливаем минимальную дату в текущую дату
-    date_edit.setMinimumDate(QDate.currentDate())
 
     # Добавляем кнопку "Выдать"
     issue_button = QPushButton('Выдать')

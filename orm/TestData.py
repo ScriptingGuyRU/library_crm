@@ -98,11 +98,10 @@ def fillTestData():
                              library_address_id=random.choice(libraryAdresses).id, worker_id=random.choice(workers).id))
 
         # Подписки
-        for i in range(20):
+        for i in range(10):
             subscription_type = choice(['ежемесячная', 'ежегодная'])
             expiration_date = choice([
-                '2020-01-01', '2020-02-15', '2020-03-10', '2020-04-25', '2020-05-12',
-                '2020-06-26', '2020-07-13', '2020-08-28', '2020-09-15', '2020-10-03'])
+                '2020-01-01', '2021-02-15', '2022-03-10', '2024-04-25', '2025-05-12'])
             session.add(Subscription(subscription_type=subscription_type, expiration_date=expiration_date,
                         reader_id=random.choice(readers).id))
 

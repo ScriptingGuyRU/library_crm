@@ -2,6 +2,7 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton
 
 from ui.BookPageUi import show_books_window
+from ui.ReaderUi import show_reader_window
 
 global login
 def show_welcome_window(login_widget):
@@ -21,7 +22,7 @@ def show_welcome_window(login_widget):
     layout.addWidget(button2)
 
     button1.clicked.connect(lambda: show_books_window(login_widget))
-    button2.clicked.connect(lambda: print("Кнопка 'Читатели' нажата"))
+    button2.clicked.connect(lambda: show_reader_window(login_widget))
 
     login_widget.hide()  # Скрываем окно LoginWidget
     welcome_dialog.exec_()  # Открываем окно welcome_dialog

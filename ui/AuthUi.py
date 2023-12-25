@@ -10,8 +10,6 @@ class LoginWidget(QWidget):
         super().__init__(parent)
         self.layout = QVBoxLayout(self)
 
-        self.setFixedSize(QSize(800, 800))
-
         self.label = QLabel('Введите имя пользователя:')
         self.login = QLineEdit()
         self.password_line_edit = QLineEdit()
@@ -29,7 +27,7 @@ class LoginWidget(QWidget):
         self.push_button.clicked.connect(self.check_credentials_internal)
 
         self.setLayout(self.layout)
-        self.setFixedSize(QSize(300, 200))
+        self.setFixedSize(QSize(300, 140))
 
     def check_credentials_internal(self):
         result = check_credentials(self.login.text(), self.password_line_edit.text())

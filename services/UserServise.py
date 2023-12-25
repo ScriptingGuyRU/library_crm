@@ -11,3 +11,4 @@ def get_lib_id_by_login(woker_login):
 
 def get_worker_id_by_login(woker_login):
     return session.query(Auth).filter_by(login=woker_login).first().worker_id
+
