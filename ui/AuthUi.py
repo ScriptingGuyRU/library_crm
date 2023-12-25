@@ -20,6 +20,9 @@ class LoginWidget(QWidget):
         self.layout.addWidget(self.password_line_edit)
         self.layout.addWidget(self.push_button)
 
+        # Заменяем введённый логин на звездочки в UI
+        self.password_line_edit.setEchoMode(QLineEdit.EchoMode.Password)
+
         #Для нажатия enter
         self.login.returnPressed.connect(self.check_credentials_internal)
         self.password_line_edit.returnPressed.connect(self.check_credentials_internal)
@@ -35,3 +38,4 @@ class LoginWidget(QWidget):
             show_welcome_window(self)
         else:
             self.push_button.setText('Неверные учетные данные')
+            self.push_button.setStyleSheet("color: red;")
